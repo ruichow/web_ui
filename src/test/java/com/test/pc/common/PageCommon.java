@@ -99,6 +99,39 @@ public class PageCommon {
         buttonElement.click();
     }
 
+    /**
+     * 点击按钮操作，外部延时传参
+     *
+     * @param beforeTime ms 时间表示点击之前等待多少时延
+     * @param by 点击按钮的定位
+     * @param afterTime ms 时间表示点击之后等待多时时延
+     */
+    protected void clickButton(long beforeTime,By by,long afterTime) throws Exception{
+        //点击之前保证页面上所有的转圈加载是加载完成的
+        for (int i = 0; i < 300; i++){
+            if (!isElementContained("//span[@class='ant-spin-dot ant-spin-dot-spin']")){
+                break;
+            }
+            Thread.sleep(100);
+        }
+        //点击之前延时
+        Thread.sleep(beforeTime);
+        //等到页面加载存在并可见并且可点击
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        wait.until(ExpectedConditions.elementToBeClickable(by));
+        WebElement buttonElement = driver.findElement(by);
+        buttonElement.click();
+        //点击之后延时
+        Thread.sleep(afterTime);
+    }
+
+    /**
+     * input框出现后就去点击先清空然后输入
+     *
+     * @param
+     *
+     */
+
     private boolean isElementContained(String s) {
     }
 }
