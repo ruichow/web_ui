@@ -200,7 +200,7 @@ public class PageCommon {
      * @param str 元素xpath定位
      * @return 返回元素是否存在的布尔值
      */
-    private boolean isElementContained(String str) {
+    protected boolean isElementContained(String str) {
         //将隐式等待关闭，或者设置成等待时间非常小
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         boolean flag = true;
