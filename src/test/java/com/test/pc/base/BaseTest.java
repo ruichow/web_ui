@@ -13,6 +13,9 @@ import redis.clients.jedis.Jedis;
 import java.util.Properties;
 
 /**
+ * BaseTest包含驱动driverbase的调用，redis的益工具类的调用，配置文件的读取,三个被调用的工具分别封装成工具
+ * 涵盖了驱动初始化，redis配置初始化，读取配置文件进行参数构建项目
+ *
  * @author：关河九州
  * @date：2019/11/20 19:07
  * @version：1.0
@@ -34,7 +37,7 @@ public class BaseTest {
     //参数化传参
     @Parameters({"propertiesUrl", "browserNumber", "remoteIP", "browserVersion"})
     public void setUp(@Optional("src/test/resources/config/config.properties") String propertiesUrl,
-                      @Optional("1") int browserNumber, @Optional() String remoteIP, @Optional("127.0.0.1") String browserVersion) {
+                      @Optional("1") int browserNumber, @Optional() String remoteIP, @Optional("78.0.3904.108") String browserVersion) {
         try {
             properties = PropertyReader.getProperties(propertiesUrl);//读取配置文件
             driverBase.randomOpenBrowse(browserNumber, remoteIP, browserVersion);
@@ -54,12 +57,12 @@ public class BaseTest {
      */
     @BeforeClass(alwaysRun = true)
     @Parameters({"user", "pwd"})
-    public void loginClass(@Optional("23902") String user, @Optional("qw1234Q!") String pwd) throws Exception {
+    public void loginClass(@Optional("23902") String user, @Optional("Admin@1234") String pwd) throws Exception {
         //初始化页面类
         LoginPage loginPage = new LoginPage(driver);
         /* 登录平台 */
         loginPage.loginHZERO_UI(user,pwd);
-//        loginPage.loginHZero_API(user, pwd);
+        loginPage.loginHZERO_API(user, pwd);
     }
 
     @AfterTest(alwaysRun = true)
