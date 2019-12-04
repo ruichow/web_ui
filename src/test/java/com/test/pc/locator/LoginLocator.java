@@ -21,11 +21,11 @@ public class LoginLocator {
     /**
      * 登录按钮
      */
-    public static final By LOGIN_BUTTON = By.className("btn btn-primary btn-raised login-account-login-btn");
+    public static final By LOGIN_BUTTON = By.xpath("//button[text()='登录']");
     /**
-     * 登录之后页面的工作台字段的定位
+     * 登录之后页面的HZERO开发环境字段的定位
      */
-    public static final By WORKBENCH_DIV = By.className("anticon anticon-home");
+    public static final By WORKBENCH_DIV = By.xpath("h1[text()='HZERO开发环境']");
 
 
 }
