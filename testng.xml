@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PC All Test Suite" parallel="tests" thread-count="3">
+    <parameter name="propertiesUrl" value="scr/test/resources/config/config.properties"/>
+    
+    <parameter name="user" value="23902"/>
+    <parameter name="pwd" value="Admin@1234"/>
+    
+    <parameter name="browserVersion" value="78.0.3904.108 "/>
+    <parameter name="remoteIP" value="192.168.1.104"/>
+
+    <!-- 所有流程实现串行 >
+    <suite-files>
+        <suite-file path="****.xml"/>
+    </suite-files -->
+
+
+    <listeners>
+        <listener class-name="com.test.listener.RePrioritizingListener"/>
+        <listener class-name="com.test.listener.TestLogListener"/>
+        <listener class-name="com.test.listener.TestReportListener"/>
+    </listeners>
+</suite>
