@@ -10,6 +10,8 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 
 /**
+ * 配置testng的执行顺序
+ *
  * @author：关河九州
  * @date：2019/12/5 19:17
  * @version：1.0
