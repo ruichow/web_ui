@@ -13,7 +13,7 @@ import java.util.*;
  * 测试用例运行加载到测试报告
  *
  * @author：关河九州
- * @date：2019/12/5 
+ * @date：2019/12/5
  * @version：1.0
  */
 public class TestReportListener implements IReporter {
