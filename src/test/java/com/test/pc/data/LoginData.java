@@ -34,19 +34,4 @@ public class LoginData {
      */
     public static final String ACCEPT_HEADER = "application/json";
 
-    /**
-     * scope 请求参数
-     */
-    public static final String SCOPE_PARAM = "read write";
-
-    /**
-     * grant_type 请求参数
-     */
-    public static final String GRANT_TYPE_PARAM = "password";
-
-    /**
-     * status code 返回码
-     */
-    public static final int SUCCESS_CODE = 200;
-
 }
