@@ -33,11 +33,13 @@ public class BaseTest {
     public static JedisBase jedisBase = new JedisBase();
     public Jedis jedis;
 
-    @BeforeTest(alwaysRun = true)
+
+
     //参数化传参
+    @BeforeTest(alwaysRun = true)
     @Parameters({"propertiesUrl", "browserNumber", "remoteIP", "browserVersion"})
     public void setUp(@Optional("src/test/resources/config/config.properties") String propertiesUrl,
-                      @Optional("1") int browserNumber, @Optional() String remoteIP, @Optional("78.0.3904.108") String browserVersion) {
+                      @Optional("1") int browserNumber, @Optional() String remoteIP, @Optional("192.168.11.221") String browserVersion) {
         try {
             properties = PropertyReader.getProperties(propertiesUrl);//读取配置文件
             driverBase.randomOpenBrowse(browserNumber, remoteIP, browserVersion);
@@ -49,13 +51,22 @@ public class BaseTest {
         }
     }
 
+    @BeforeClass(alwaysRun = true)
+    public void beforeClassInit() throws Exception{
+        driver = driverBase.getDriver();
+        timePage.setTimeouts(driver);
+        wait = timePage.getWait();
+        //需要用到Redis时调用
+        jedis = jedisBase.getJedis();
+    }
+
     /**
      * 运行时要先登录
      *
      * @param user 用户名
      * @param pwd  密码
      */
-    @BeforeClass(alwaysRun = true)
+    //@BeforeClass
     @Parameters({"user", "pwd"})
     public void loginClass(@Optional("23902") String user, @Optional("Admin@1234") String pwd) throws Exception {
         //初始化页面类
