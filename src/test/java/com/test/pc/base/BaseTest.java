@@ -66,7 +66,7 @@ public class BaseTest {
      * @param user 用户名
      * @param pwd  密码
      */
-    //@BeforeClass
+    @BeforeClass(alwaysRun = true)
     @Parameters({"user", "pwd"})
     public void loginClass(@Optional("23902") String user, @Optional("Admin@1234") String pwd) throws Exception {
         //初始化页面类
