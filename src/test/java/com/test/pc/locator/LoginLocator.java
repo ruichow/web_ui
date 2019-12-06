@@ -13,19 +13,19 @@ public class LoginLocator {
     /**
      * 用户名输入框
      */
-    public static final By USER_INPUT = By.id("username");
+    public static final By USER_INPUT = By.xpath("//input[@id='username']");
     /**
      * 密码输入框
      */
-    public static final By PWD_INPUT = By.id("password");
+    public static final By PWD_INPUT = By.id("//input[@id='password']");
     /**
      * 登录按钮
      */
     public static final By LOGIN_BUTTON = By.xpath("//button[text()='登录']");
     /**
-     * 登录之后页面的HZERO开发环境字段的定位
+     * 登录之后页面的工作台字段的定位
      */
-    public static final By WORKBENCH_DIV = By.xpath("h1[text()='HZERO开发环境']");
+    public static final By WORKBENCH_DIV = By.className("//h1[text()='HZERO开发环境']");
 
 
 }
