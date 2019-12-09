@@ -17,7 +17,7 @@ public class LoginLocator {
     /**
      * 密码输入框
      */
-    public static final By PWD_INPUT = By.id("//input[@id='password']");
+    public static final By PWD_INPUT = By.xpath("//input[@id='password']");
     /**
      * 登录按钮
      */
