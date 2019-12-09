@@ -63,9 +63,9 @@ public class LoginPage extends PageCommon{
         //等到登录按钮可见之后再去点击
         clickButton(LoginLocator.LOGIN_BUTTON);
         for (int i = 0; i < 1800; i++){
-            log.info("寻找登录按钮" +i);
+            log.info("寻找系统title" +i);
             Thread.sleep(100);
-            if (isElementContained("//button[text()='登录']")){
+            if (isElementContained("//h1[text()='HZERO开发环境']")){
                 break;
             }
         }
