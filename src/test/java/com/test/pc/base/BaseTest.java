@@ -73,7 +73,7 @@ public class BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         /* 登录平台 */
         loginPage.loginHZERO_UI(user,pwd);
-        loginPage.loginHZERO_API(user, pwd);
+        //loginPage.loginHZERO_API(user, pwd);
     }
 
     @AfterTest(alwaysRun = true)
