@@ -81,7 +81,7 @@ public class LoginPage extends PageCommon{
     public void loginHZERO_API(String user, String pwd) throws Exception {
         log.info("使用 API 进行登陆操作");
 
-        // 进入融智汇的首页
+        // 进入平台的首页
         driver.get(LoginData.URL);
 
         /* 返回数据 */
